@@ -1,0 +1,24 @@
+data-generator:
+  max-entities: 2000
+
+quarkus:
+  datasource:
+    db-kind: postgresql
+    max-size: 10
+  http:
+    access-log:
+      enabled: true
+      pattern: '"%r" %s %b %m Headers:"%{ALL_REQUEST_HEADERS}"'
+  hibernate-orm:
+    database:
+      generation:
+        ~: drop-and-create
+        create-schemas: true
+    log:
+      sql: false
+      format-sql: true
+      bind-parameters: true
+
+  log:
+    console:
+      darken: 1

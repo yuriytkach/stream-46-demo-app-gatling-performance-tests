@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '8.6'
+
+    id 'io.gatling.gradle' version '3.11.2'
+}
+
+group = 'com.yuriytkach.demo46'
+version = '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    gatling 'org.apache.commons:commons-lang3:3.12.0'
+    gatling 'one.util:streamex:0.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
